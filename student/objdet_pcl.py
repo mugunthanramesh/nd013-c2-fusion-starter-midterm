@@ -37,7 +37,6 @@ def show_pcl(pcl):
 
     ####### ID_S1_EX2 START #######     
     #######
-    print("student task ID_S1_EX2")
 
     # step 1 : initialize open3d with key callback and create window
     
@@ -72,7 +71,6 @@ def show_range_image(frame, lidar_name):
 
     ####### ID_S1_EX1 START #######     
     #######
-    print("student task ID_S1_EX1")
     
     # step 1 : extract lidar data and range image for the roof-mounted lidar
     lidar = [obj for obj in frame.lasers if obj.name == lidar_name][0]
@@ -127,7 +125,6 @@ def bev_from_pcl(lidar_pcl, configs):
     # convert sensor coordinates to bev-map coordinates (center is bottom-middle)
     ####### ID_S2_EX1 START #######     
     #######
-    print("student task ID_S2_EX1")
 
     # step 1 :  compute bev-map discretization by dividing x-range by the bev-image height (see configs)
     bev_discret = (configs.lim_x[1] - configs.lim_x[0]) / configs.bev_height
@@ -150,7 +147,6 @@ def bev_from_pcl(lidar_pcl, configs):
     # Compute intensity layer of the BEV map
     ####### ID_S2_EX2 START #######     
     #######
-    print("student task ID_S2_EX2")
 
     ## step 1 : create a numpy array filled with zeros which has the same dimensions as the BEV map
     intensity_map = np.zeros((configs.bev_height, configs.bev_width))
@@ -184,7 +180,6 @@ def bev_from_pcl(lidar_pcl, configs):
     # Compute height layer of the BEV map
     ####### ID_S2_EX3 START #######     
     #######
-    print("student task ID_S2_EX3")
 
     ## step 1 : create a numpy array filled with zeros which has the same dimensions as the BEV map
     height_map = np.zeros((configs.bev_height, configs.bev_width))

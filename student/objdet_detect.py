@@ -62,7 +62,6 @@ def load_configs_model(model_name='darknet', configs=None):
     elif model_name == 'fpn_resnet':
         ####### ID_S3_EX1-3 START #######     
         #######
-        print("student task ID_S3_EX1-3")
         configs.arch = 'fpn_resnet'
         configs.saved_fn = 'fpn_resnet'
         configs.pretrained_path = 'tools/objdet_models/resnet/pretrained/fpn_resnet_18_epoch_300.pth'
@@ -153,7 +152,6 @@ def create_model(configs):
         
         ####### ID_S3_EX1-4 START #######     
         #######
-        print("student task ID_S3_EX1-4")
         num_layers = 18
         model = fpn_resnet.get_pose_net(num_layers = num_layers, heads = configs.heads, 
                                         head_conv= configs.head_conv, 
@@ -204,7 +202,6 @@ def detect_objects(input_bev_maps, model, configs):
             
             ####### ID_S3_EX1-5 START #######     
             #######
-            print("student task ID_S3_EX1-5")
             outputs['hm_cen'] = _sigmoid(outputs['hm_cen'])
             outputs['cen_offset'] = _sigmoid(outputs['cen_offset'])
             # detections size (batch_size, K, 10)
@@ -223,7 +220,6 @@ def detect_objects(input_bev_maps, model, configs):
     ####### ID_S3_EX2 START #######     
     #######
     # Extract 3d bounding boxes from model response
-    print("student task ID_S3_EX2")
     objects = [] 
 
     ## step 1 : check whether there are any detections
